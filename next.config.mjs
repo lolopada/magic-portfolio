@@ -5,10 +5,18 @@ const withMDX = mdx({
   options: {},
 });
 
+// Configuration pour le déploiement GitHub Pages
+const isProd = process.env.NODE_ENV === 'production';
+const repoName = '/magic-portfolio';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
+  // Définir basePath pour le déploiement en sous-répertoire GitHub Pages
+  basePath: isProd ? repoName : '',
+  // Définir assetPrefix pour que les assets statiques utilisent aussi le bon chemin
+  assetPrefix: isProd ? repoName : '',
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   transpilePackages: ["next-mdx-remote"],
   images: {
