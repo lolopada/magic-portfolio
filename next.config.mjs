@@ -12,7 +12,7 @@ const repoName = '/magic-portfolio';
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  trailingSlash: true,
+  trailingSlash: false,
   distDir: 'out',
   // Définir basePath pour le déploiement en sous-répertoire GitHub Pages
   basePath: isProd ? repoName : '',

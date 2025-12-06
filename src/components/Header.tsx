@@ -97,14 +97,14 @@ export const Header = () => {
                       prefixIcon="person"
                       href="/about"
                       label={about.label}
-                      selected={pathname === "/about"}
+                      selected={pathname === "/about" || pathname === "/about/"}
                     />
                   </Row>
                   <Row hide s={{ hide: false }}>
                     <ToggleButton
                       prefixIcon="person"
                       href="/about"
-                      selected={pathname === "/about"}
+                      selected={pathname === "/about" || pathname === "/about/"}
                     />
                   </Row>
                 </>
