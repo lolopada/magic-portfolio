@@ -44,10 +44,13 @@ function readMDXFile(filePath: string) {
     subtitle: data.subtitle || "",
     publishedAt: data.publishedAt,
     summary: data.summary || "",
-    image: data.image || "",
-    images: data.images || [],
+    image: data.image ? getImagePath(data.image) : "",
+    images: data.images ? data.images.map((img: string) => getImagePath(img)) : [],
     tag: data.tag || [],
-    team: data.team || [],
+    team: data.team ? data.team.map((member: Team) => ({
+      ...member,
+      avatar: getImagePath(member.avatar)
+    })) : [],
     link: data.link || "",
   };
 
@@ -71,4 +74,14 @@ function getMDXData(dir: string) {
 export function getPosts(customPath = ["", "", "", ""]) {
   const postsDir = path.join(process.cwd(), ...customPath);
   return getMDXData(postsDir);
+}
+
+// Helper function to add basePath to image URLs for GitHub Pages
+export function getImagePath(imagePath: string): string {
+  const basePath = process.env.NODE_ENV === 'production' ? '/magic-portfolio' : '';
+  // Only add basePath if the path starts with /
+  if (imagePath.startsWith('/')) {
+    return `${basePath}${imagePath}`;
+  }
+  return imagePath;
 }
