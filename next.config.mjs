@@ -17,6 +17,9 @@ const nextConfig = {
   basePath: isProd ? repoName : '',
   // Définir assetPrefix pour que les assets statiques utilisent aussi le bon chemin
   assetPrefix: isProd ? repoName : '',
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isProd ? repoName : '',
+  },
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   transpilePackages: ["next-mdx-remote"],
   images: {

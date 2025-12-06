@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { getImagePath } from "./paths";
 
 type Team = {
   name: string;
@@ -74,14 +75,4 @@ function getMDXData(dir: string) {
 export function getPosts(customPath = ["", "", "", ""]) {
   const postsDir = path.join(process.cwd(), ...customPath);
   return getMDXData(postsDir);
-}
-
-// Helper function to add basePath to image URLs for GitHub Pages
-export function getImagePath(imagePath: string): string {
-  const basePath = process.env.NODE_ENV === 'production' ? '/magic-portfolio' : '';
-  // Only add basePath if the path starts with /
-  if (imagePath.startsWith('/')) {
-    return `${basePath}${imagePath}`;
-  }
-  return imagePath;
 }

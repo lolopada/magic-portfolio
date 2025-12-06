@@ -1,4 +1,5 @@
-import { getPosts, getImagePath } from "@/utils/utils";
+import { getPosts } from "@/utils/utils";
+import { getImagePath } from "@/utils/paths";
 import { baseURL, blog, person } from "@/resources";
 import { NextResponse } from "next/server";
 
