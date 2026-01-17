@@ -5,22 +5,13 @@ const withMDX = mdx({
   options: {},
 });
 
-// Configuration pour le déploiement GitHub Pages
-const isProd = process.env.NODE_ENV === 'production';
-const repoName = '/Portfolio-next-js';
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
   trailingSlash: false,
   distDir: 'out',
-  // Définir basePath pour le déploiement en sous-répertoire GitHub Pages
-  basePath: isProd ? repoName : '',
-  // Définir assetPrefix pour que les assets statiques utilisent aussi le bon chemin
-  assetPrefix: isProd ? repoName : '',
-  env: {
-    NEXT_PUBLIC_BASE_PATH: isProd ? repoName : '',
-  },
+  // Pas de basePath pour un domaine personnalisé à la racine
+  // Le site sera accessible directement à https://www.paada.fr/
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   transpilePackages: ["next-mdx-remote"],
   images: {
