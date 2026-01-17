@@ -45,10 +45,10 @@ const social: Social = [
 
 const home: Home = {
   path: "/",
-  image: getImagePath("/images/og/home.jpg"),
+
   label: "Home",
   title: `${person.name}`,
-  description: `Site portfolio présentant mon travail en tant que ${person.role}`,
+  description: `Portfolio présentant mon travail en tant qu'${person.role}`,
   headline: (
     <>
       <span className="gradient-headline">
