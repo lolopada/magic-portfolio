@@ -7,7 +7,7 @@ const withMDX = mdx({
 
 // Configuration pour le déploiement GitHub Pages
 const isProd = process.env.NODE_ENV === 'production';
-const repoName = '/magic-portfolio';
+const repoName = '/Portfolio-next-js';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
