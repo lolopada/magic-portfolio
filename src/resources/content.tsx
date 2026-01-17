@@ -3,18 +3,18 @@ import { Line, Row, Text } from "@once-ui-system/core";
 import { getImagePath } from "@/utils/paths";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
+  firstName: "Loïc",
+  lastName: "Sainton",
+  name: `Loïc Sainton`,
   role: "Design Engineer",
   avatar: getImagePath("/images/avatar.jpg"),
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  email: "sainton.loic1@gmail.com",
+  location: "Europe/Paris", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["Français", "Anglais"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter: Newsletter = {
-  display: true,
+  display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: <>My weekly newsletter about creativity and engineering</>,
 };
@@ -26,25 +26,13 @@ const social: Social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/lolopada",
     essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-    essential: true,
-  },
-  {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    link: "https://www.linkedin.com/in/loic-sainton/",
     essential: true,
   },
   {
@@ -59,11 +47,21 @@ const home: Home = {
   path: "/",
   image: getImagePath("/images/og/home.jpg"),
   label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  title: `${person.name}`,
+  description: `Site portfolio présentant mon travail en tant que ${person.role}`,
+  headline: (
+    <>
+      <span className="gradient-headline">
+        LOIC SAINTON
+      </span>
+      <br />
+      <span className="gradient-subheadline">
+        Explorer. Apprendre. Coder.
+      </span>
+    </>
+  ),
   featured: {
-    display: true,
+    display: false,
     title: (
       <Row gap="12" vertical="center">
         <strong className="ml-4">Once UI</strong>{" "}
@@ -77,8 +75,8 @@ const home: Home = {
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
-</>
+      Curieux de nature, j’aime explorer de nouvelles technos et coder des solutions dès que j'en ai besoin.
+    </>
   ),
 };
 
