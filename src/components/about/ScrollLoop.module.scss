@@ -1,0 +1,37 @@
+.wrapper {
+    display: flex !important;
+    flex-direction: row !important;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    mask-image: linear-gradient(to right,
+            transparent 0%,
+            black 10%,
+            black 90%,
+            transparent 100%);
+}
+
+.inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    padding-right: 2rem;
+    width: max-content;
+    animation: scroll 40s linear infinite;
+    will-change: transform;
+}
+
+.reverse {
+    animation-direction: reverse;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}

@@ -189,13 +189,10 @@ export interface About extends BasePageConfig {
     skills: Array<{
       /** Skill title */
       title: string;
+      /** Skill icon */
+      icon?: string;
       /** Skill description */
       description?: React.ReactNode;
-      /** Skill tags */
-      tags?: Array<{
-        name: string;
-        icon?: string;
-      }>;
       /** Images related to the skill */
       images?: Array<{
         /** Image source path */
@@ -215,13 +212,13 @@ export interface About extends BasePageConfig {
  * Blog page configuration.
  * @description Configuration for the Blog page, including metadata and navigation label.
  */
-export interface Blog extends BasePageConfig {}
+export interface Blog extends BasePageConfig { }
 
 /**
  * Work/projects page configuration.
  * @description Configuration for the Work/Projects page, including metadata and navigation label.
  */
-export interface Work extends BasePageConfig {}
+export interface Work extends BasePageConfig { }
 
 /**
  * Gallery page configuration.

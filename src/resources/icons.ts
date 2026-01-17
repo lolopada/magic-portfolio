@@ -20,6 +20,7 @@ import {
   PiGridFourDuotone,
   PiBookBookmarkDuotone,
   PiImageDuotone,
+  PiPlantFill
 } from "react-icons/pi";
 
 import {
@@ -27,9 +28,14 @@ import {
   SiNextdotjs,
   SiFigma,
   SiSupabase,
+  SiMysql,
+  SiPostgresql,
+  SiC,
+  SiGnubash,
 } from "react-icons/si";
 
-import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads, FaInstagram, FaXTwitter, FaFacebook, FaPinterest, FaWhatsapp, FaReddit, FaTelegram, } from "react-icons/fa6";
+import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads, FaInstagram, FaXTwitter, FaFacebook, FaPinterest, FaWhatsapp, FaReddit, FaTelegram, FaJava, FaPython, FaHtml5, FaCss3, FaDocker, FaReact, FaGitAlt, FaNodeJs, FaAngular, FaVuejs, FaAws, FaAndroid, FaPhp, FaLinux } from "react-icons/fa6";
+import { FaStar } from "react-icons/fa";
 
 export const iconLibrary: Record<string, IconType> = {
   arrowUpRight: HiArrowUpRight,
@@ -64,6 +70,27 @@ export const iconLibrary: Record<string, IconType> = {
   reddit: FaReddit,
   telegram: FaTelegram,
   instagram: FaInstagram,
+  java: FaJava,
+  python: FaPython,
+  html: FaHtml5,
+  css: FaCss3,
+  docker: FaDocker,
+  react: FaReact,
+  git: FaGitAlt,
+  node: FaNodeJs,
+  angular: FaAngular,
+  vue: FaVuejs,
+  aws: FaAws,
+  mysql: SiMysql,
+  postgresql: SiPostgresql,
+  c: SiC,
+  android: FaAndroid,
+  php: FaPhp,
+  linux: FaLinux,
+  bash: SiGnubash,
+  libgdx: HiOutlineRocketLaunch,
+  FaStar: FaStar,
+  PiPlantFill: PiPlantFill,
 };
 
 export type IconLibrary = typeof iconLibrary;

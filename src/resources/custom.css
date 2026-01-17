@@ -92,3 +92,16 @@
     font-size: 2rem;
   }
 }
+
+.gradient-timeline-title {
+  background-image: linear-gradient(90deg, #ffffff 0%, #24c6dc 50%, #514a9d 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  display: inline-block;
+}
+
+[data-theme="light"] .gradient-timeline-title {
+  background-image: linear-gradient(90deg, #000000 0%, #24c6dc 50%, #514a9d 100%);
+}

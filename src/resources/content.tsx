@@ -1,16 +1,16 @@
 import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
-import { Line, Row, Text } from "@once-ui-system/core";
+import { Line, Row, Text, Tag, Icon } from "@once-ui-system/core";
 import { getImagePath } from "@/utils/paths";
 
 const person: Person = {
   firstName: "Loïc",
   lastName: "Sainton",
   name: `Loïc Sainton`,
-  role: "Design Engineer",
+  role: "Etudiant",
   avatar: getImagePath("/images/avatar.jpg"),
   email: "sainton.loic1@gmail.com",
   location: "Europe/Paris", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["Français", "Anglais"], // optional: Leave the array empty if you don't want to display languages
+  languages: [], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter: Newsletter = {
@@ -40,7 +40,7 @@ const social: Social = [
     icon: "email",
     link: `mailto:${person.email}`,
     essential: true,
-  },
+  }
 ];
 
 const home: Home = {
@@ -93,7 +93,7 @@ const about: About = {
     display: true,
   },
   calendar: {
-    display: true,
+    display: false,
     link: "https://cal.com",
   },
   intro: {
@@ -101,14 +101,14 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Actuellement en 2ème année de BUT Informatique à l'IUT de Fontainebleau,
+        je recherche un stage de 8 semaines minimum à compter de fin mars/début avril 2026.
+
       </>
     ),
   },
   work: {
-    display: true, // set to false to hide this section
+    display: false, // set to false to hide this section
     title: "Work Experience",
     experiences: [
       {
@@ -116,14 +116,8 @@ const about: About = {
         timeframe: "2022 - Present",
         role: "Senior Design Engineer",
         achievements: [
-          <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
-          </>,
-          <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
-          </>,
+          "Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user engagement and 30% faster load times.",
+          "Spearheaded the integration of AI tools into design workflows, enabling designers to iterate 50% faster.",
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
@@ -140,14 +134,8 @@ const about: About = {
         timeframe: "2018 - 2022",
         role: "Lead Designer",
         achievements: [
-          <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
-          </>,
-          <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
-          </>,
+          "Developed a design system that unified the brand across multiple platforms, improving design consistency by 40%.",
+          "Led a cross-functional team to launch a new product line, contributing to a 15% increase in overall company revenue.",
         ],
         images: [],
       },
@@ -155,77 +143,113 @@ const about: About = {
   },
   studies: {
     display: true, // set to false to hide this section
-    title: "Studies",
+    title: "Formation",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Bachelor Universitaire de Technologie Informatique",
+        description: (
+          <>
+            Université Paris-Est Créteil, IUT Fontainebleau-Sénart (77) • 2024 - 2027
+          </>
+        ),
+        details: [
+          {
+            label: "Parcours A ",
+            value: "Réalisation d'applications : conception, développement, validation"
+          }
+        ]
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Baccalauréat Général",
+        description: (
+          <>
+            Lycée Lafayette, Champagne sur Seine (77) • 2024
+          </>
+        ),
+        details: [
+          {
+            label: "Spécialités ",
+            value: "Sciences du Numérique et de l'Informatique (NSI) et Mathématiques"
+          },
+          {
+            label: "Option ",
+            value: "Mathématiques Expertes"
+          }
+        ]
       },
     ],
   },
   technical: {
     display: true, // set to false to hide this section
-    title: "Technical skills",
+    title: "Compétences techniques",
     skills: [
       {
-        title: "Figma",
-        description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
-        ),
-        tags: [
-          {
-            name: "Figma",
-            icon: "figma",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: getImagePath("/images/projects/project-01/cover-02.jpg"),
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: getImagePath("/images/projects/project-01/cover-03.jpg"),
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        title: "Java",
+        icon: "java",
+      },
+      {
+        title: "Python",
+        icon: "python",
+      },
+      {
+        title: "HTML",
+        icon: "html",
+      },
+      {
+        title: "CSS",
+        icon: "css",
+      },
+      {
+        title: "JavaScript",
+        icon: "javascript",
       },
       {
         title: "Next.js",
-        description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
-        ),
-        tags: [
-          {
-            name: "JavaScript",
-            icon: "javascript",
-          },
-          {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: getImagePath("/images/projects/project-01/cover-04.jpg"),
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        icon: "nextjs",
+      },
+      {
+        title: "Git",
+        icon: "git",
+      },
+      {
+        title: "Docker",
+        icon: "docker",
+      },
+      {
+        title: "PostgreSQL",
+        icon: "postgresql",
+      },
+      {
+        title: "MySQL",
+        icon: "mysql",
+      },
+      {
+        title: "C",
+        icon: "c",
+      },
+      {
+        title: "Android SDK",
+        icon: "android",
+      },
+      {
+        title: "PHP",
+        icon: "php",
+      },
+      {
+        title: "StarUML",
+        icon: "FaStar",
+      },
+      {
+        title: "PlantUML",
+        icon: "PiPlantFill",
+      },
+      {
+        title: "LibGDX",
+        icon: "libgdx",
+      },
+      {
+        title: "Linux / Bash",
+        icon: "linux",
       },
     ],
   },
