@@ -71,7 +71,7 @@ export default function Timeline({ items }: { items: TimelineItemProps[] }) {
 
                         {/* Details inline */}
                         {item.details && item.details.length > 0 && (
-                            <Column gap="6" marginTop="8">
+                            <Column gap="4" marginTop="8">
                                 {item.details.map((detail, detailIndex) => (
                                     <Row
                                         key={`${item.name}-detail-${detailIndex}`}
