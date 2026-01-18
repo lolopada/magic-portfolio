@@ -1,3 +1,4 @@
+import Script from "next/script";
 import "@once-ui-system/core/css/styles.css";
 import "@once-ui-system/core/css/tokens.css";
 import "@/resources/custom.css";
@@ -114,6 +115,11 @@ export default async function RootLayout({
           horizontal="center"
         >
           <MouseHalo />
+          <Script
+            defer
+            src="https://static.cloudflareinsights.com/beacon.min.js"
+            data-cf-beacon='{"token": "c63376ceec57467583370055d83c88ab"}'
+          />
           <RevealFx fill position="absolute">
             <Background
               mask={{
