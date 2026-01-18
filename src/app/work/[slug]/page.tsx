@@ -1,3 +1,4 @@
+import React from 'react';
 import { notFound } from "next/navigation";
 import { getPosts } from "@/utils/utils";
 import {
@@ -94,7 +95,7 @@ export default async function Project({
       />
       <Column maxWidth="s" gap="16" horizontal="center" align="center">
         <SmartLink href="/work">
-          <Text variant="label-strong-m">Projects</Text>
+          <Text variant="label-strong-m">Projets</Text>
         </SmartLink>
         <Heading variant="display-strong-m">{post.metadata.title}</Heading>
       </Column>
@@ -118,18 +119,20 @@ export default async function Project({
           </SmartLink>
         )}
       </Row>
-      {post.metadata.images.length > 0 && (
-        <Media priority aspectRatio="16 / 9" radius="m" alt="image" src={post.metadata.images[0]} />
+{post.metadata.images.length > 0 && (
+        <Media
+          priority
+          aspectRatio="16 / 9"
+          radius="m"
+          alt="image"
+          src={post.metadata.images[0]}
+          style={{ objectFit: post.metadata.imageFit as React.CSSProperties["objectFit"] }}
+          border={post.metadata.hideCoverBorder ? "none" : undefined}
+          background={post.metadata.hideCoverBorder ? "transparent" : undefined}
+        />
       )}
       <Column style={{ margin: "auto" }} as="article" maxWidth="xs">
         <CustomMDX source={post.content} />
-      </Column>
-      <Column fillWidth gap="40" horizontal="center" marginTop="40">
-        <Line maxWidth="40" />
-        <Heading as="h2" variant="heading-strong-xl" marginBottom="24">
-          Related projects
-        </Heading>
-        <Projects exclude={[post.slug]} range={[2]} />
       </Column>
       <ScrollToHash />
     </Column>

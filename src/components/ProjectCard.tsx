@@ -20,6 +20,7 @@ interface ProjectCardProps {
   avatars: { src: string }[];
   link: string;
   github?: string;
+  imageFit?: string;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -31,9 +32,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   avatars,
   link,
   github,
+  imageFit,
 }) => {
   return (
-    <Column fillWidth gap="m">
+    <Column fillWidth gap="m" className={imageFit ? `image-fit-${imageFit}` : ''}>
       <Carousel
         sizes="(max-width: 960px) 100vw, 960px"
         items={images.map((image) => ({

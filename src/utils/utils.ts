@@ -21,6 +21,8 @@ type Metadata = {
   team: Team[];
   link?: string;
   github?: string;
+  imageFit?: string;
+  hideCoverBorder?: boolean;
 };
 
 import { notFound } from "next/navigation";
@@ -55,6 +57,8 @@ function readMDXFile(filePath: string) {
     })) : [],
     link: data.link || "",
     github: data.github || "",
+    imageFit: data.imageFit || "",
+    hideCoverBorder: data.hideCoverBorder || false,
   };
 
   return { metadata, content };
