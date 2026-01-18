@@ -24,9 +24,14 @@ export function Posts({
     allBlogs = allBlogs.filter((post) => !exclude.includes(post.slug));
   }
 
-  const sortedBlogs = allBlogs.sort((a, b) => {
-    return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime();
-  });
+  const sortedBlogs = allBlogs
+    .filter((post) => post.metadata.publishedAt)
+    .sort((a, b) => {
+      return (
+        new Date(b.metadata.publishedAt!).getTime() -
+        new Date(a.metadata.publishedAt!).getTime()
+      );
+    });
 
   const displayedBlogs = range
     ? sortedBlogs.slice(range[0] - 1, range.length === 2 ? range[1] : sortedBlogs.length)
