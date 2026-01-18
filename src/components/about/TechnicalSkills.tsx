@@ -1,6 +1,6 @@
 "use client";
 
-import { Tag } from "@once-ui-system/core";
+import { Tag, Column } from "@once-ui-system/core";
 import ScrollLoop from "@/components/about/ScrollLoop";
 
 interface TechnicalSkillsProps {
@@ -15,34 +15,82 @@ export default function TechnicalSkills({ skills }: TechnicalSkillsProps) {
     const firstHalf = skills.slice(0, half);
     const secondHalf = skills.slice(half);
 
+    const third = Math.ceil(skills.length / 3);
+    const firstThird = skills.slice(0, third);
+    const secondThird = skills.slice(third, third * 2);
+    const thirdThird = skills.slice(third * 2);
+
     return (
-        <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-            <ScrollLoop
-                items={firstHalf}
-                direction="left"
-                renderItem={(skill, key) => (
-                    <Tag
-                        key={key}
-                        size="l"
-                        prefixIcon={skill.icon}
-                    >
-                        {skill.title}
-                    </Tag>
-                )}
-            />
-            <ScrollLoop
-                items={secondHalf}
-                direction="right"
-                renderItem={(skill, key) => (
-                    <Tag
-                        key={key}
-                        size="l"
-                        prefixIcon={skill.icon}
-                    >
-                        {skill.title}
-                    </Tag>
-                )}
-            />
-        </div>
+        <>
+            <Column s={{ hide: true }} fillWidth gap="m">
+                <ScrollLoop
+                    items={firstHalf}
+                    direction="left"
+                    renderItem={(skill, key) => (
+                        <Tag
+                            key={key}
+                            size="l"
+                            prefixIcon={skill.icon}
+                        >
+                            {skill.title}
+                        </Tag>
+                    )}
+                />
+                <ScrollLoop
+                    items={secondHalf}
+                    direction="right"
+                    renderItem={(skill, key) => (
+                        <Tag
+                            key={key}
+                            size="l"
+                            prefixIcon={skill.icon}
+                        >
+                            {skill.title}
+                        </Tag>
+                    )}
+                />
+            </Column>
+            <Column hide s={{ hide: false }} fillWidth gap="m">
+                <ScrollLoop
+                    items={firstThird}
+                    direction="left"
+                    renderItem={(skill, key) => (
+                        <Tag
+                            key={key}
+                            size="l"
+                            prefixIcon={skill.icon}
+                        >
+                            {skill.title}
+                        </Tag>
+                    )}
+                />
+                <ScrollLoop
+                    items={secondThird}
+                    direction="right"
+                    renderItem={(skill, key) => (
+                        <Tag
+                            key={key}
+                            size="l"
+                            prefixIcon={skill.icon}
+                        >
+                            {skill.title}
+                        </Tag>
+                    )}
+                />
+                <ScrollLoop
+                    items={thirdThird}
+                    direction="left"
+                    renderItem={(skill, key) => (
+                        <Tag
+                            key={key}
+                            size="l"
+                            prefixIcon={skill.icon}
+                        >
+                            {skill.title}
+                        </Tag>
+                    )}
+                />
+            </Column>
+        </>
     );
 }

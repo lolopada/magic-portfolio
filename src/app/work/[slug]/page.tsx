@@ -69,7 +69,7 @@ export default async function Project({
   }
 
   const avatars =
-    post.metadata.team?.map((person) => ({
+    post.metadata.team?.filter((person) => person.avatar).map((person) => ({
       src: person.avatar,
     })) || [];
 
@@ -96,27 +96,27 @@ export default async function Project({
         <SmartLink href="/work">
           <Text variant="label-strong-m">Projects</Text>
         </SmartLink>
-        <Text variant="body-default-xs" onBackground="neutral-weak" marginBottom="12">
-          {post.metadata.publishedAt && formatDate(post.metadata.publishedAt)}
-        </Text>
         <Heading variant="display-strong-m">{post.metadata.title}</Heading>
       </Column>
-      <Row marginBottom="32" horizontal="center">
-        <Row gap="16" vertical="center">
-          {post.metadata.team && <AvatarGroup reverse avatars={avatars} size="s" />}
-          <Text variant="label-default-m" onBackground="brand-weak">
-            {post.metadata.team?.map((member, idx) => (
-              <span key={idx}>
-                {idx > 0 && (
-                  <Text as="span" onBackground="neutral-weak">
-                    ,{" "}
-                  </Text>
-                )}
-                <SmartLink href={member.linkedIn}>{member.name}</SmartLink>
-              </span>
-            ))}
-          </Text>
-        </Row>
+      <Row marginBottom="32" horizontal="center" gap="16" vertical="center">
+        {post.metadata.team && <AvatarGroup reverse avatars={avatars} size="s" />}
+        <Text variant="label-default-m" onBackground="brand-weak">
+          {post.metadata.team?.map((member, idx) => (
+            <span key={idx}>
+              {idx > 0 && (
+                <Text as="span" onBackground="neutral-weak">
+                  ,{" "}
+                </Text>
+              )}
+              <SmartLink href={member.linkedIn}>{member.name}</SmartLink>
+            </span>
+          ))}
+        </Text>
+        {post.metadata.github && (
+          <SmartLink href={post.metadata.github} suffixIcon="github">
+            <Text variant="label-default-m">GitHub</Text>
+          </SmartLink>
+        )}
       </Row>
       {post.metadata.images.length > 0 && (
         <Media priority aspectRatio="16 / 9" radius="m" alt="image" src={post.metadata.images[0]} />

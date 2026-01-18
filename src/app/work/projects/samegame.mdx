@@ -1,0 +1,47 @@
+---
+title: "SameGame"
+github: "https://github.com/lolopada/SameGame"
+publishedAt: "2024-03-01"
+summary: "Jeu de puzzle classique SameGame en Java."
+images:
+  - "/images/projects/samegame/cover.jpg"
+team:
+  - name: "Loïc Sainton"
+    role: "Développeur"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/loic-sainton/"
+  - name: "Mathis Pauron"
+    role: "Développeur"
+    avatar: "/images/avatar.jpg"
+---
+
+## Aperçu
+
+**SameGame** est un jeu de réflexion où le joueur doit vider une grille remplie de gemmes colorées. En cliquant sur un groupe de deux gemmes ou plus de la même couleur, celles-ci disparaissent et les blocs du dessus tombent pour combler le vide.
+
+## Caractéristiques du Jeu
+
+- **Grille** : Plateau de 15x10 cases avec gestion de la gravité (les blocs tombent) et du décalage latéral (les colonnes vides sont supprimées).
+- **Modes de Jeu** :
+  - **Aléatoire** : Une nouvelle grille générée procéduralement à chaque partie.
+  - **Pattern** : Chargement de niveaux prédéfinis via des fichiers texte.
+- **Interactions** : 
+  - Survol pour prévisualiser les groupes qui seront détruits.
+  - Score calculé en fonction de la taille des groupes détruits.
+
+## Aspects Techniques
+
+Le projet est codé en **Java** pur sans moteur de jeu externe, utilisant la bibliothèque standard **Swing** pour le rendu.
+
+- **Algorithme Récursif** : Détection des groupes de blocs adjacents optimisée.
+- **Système de Fichiers** : parsing de fichiers texte pour charger/sauvegarder des configurations de niveau personnalisées.
+
+## Création de Niveaux
+
+Le jeu supporte un format de fichier simple pour créer ses propres défis :
+```text
+RRVVVVRBVVVRRRR
+VVVVRVRBVRBBVBB
+...
+```
+Où `R`, `V`, `B` représentent les couleurs (Rouge, Vert, Bleu).

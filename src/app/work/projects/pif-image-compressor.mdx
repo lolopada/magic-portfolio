@@ -1,0 +1,40 @@
+---
+title: "PIF Image Compressor"
+github: "https://github.com/lolopada/pif-image-compressor"
+publishedAt: "2024-12-01"
+summary: "Projet académique explorant la compression d'images via l'algorithme de Huffman et la création d'un format de fichier personnalisé (.pif)."
+images:
+  - "/images/projects/pif/cover.png"
+team:
+  - name: "Loïc Sainton"
+    role: "Co-Développeur"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/loic-sainton/"
+  - name: "Nicolas Miekisiak"
+    role: "Co-Développeur"
+
+---
+
+## Aperçu
+
+Le **Projet PIF (Primitive Image Format)** est une exploration approfondie des algorithmes de compression de données. Le but était de concevoir un format d'image optimisé utilisant le **codage de Huffman** pour réduire la taille des fichiers sans perte de qualité significative sur la structure des données (compression sans perte au niveau des fréquences de couleurs).
+
+Le projet se compose de deux outils distincts : un **Convertisseur** (Encodeur) et un **Visualisateur** (Décodeur).
+
+## Fonctionnalités
+
+### Convertisseur
+- **Analyse Fréquentielle** : Analyse l'image source pour calculer la fréquence d'apparition de chaque composante RGB.
+- **Génération d'Arbre de Huffman** : Construit dynamiquement un arbre binaire optimal pour chaque canal de couleur.
+- **Encodage** : Génère le fichier binaire `.pif` contenant l'en-tête, les tables de codes canoniques et les données pixels compressées.
+
+### Visualisateur
+- **Décodage Temps Réel** : Reconstruit l'image pixel par pixel en parcourant les arbres de Huffman générés depuis le fichier.
+- **Interface Zoomable** : Gestion de l'affichage avec support du redimensionnement et du drag-and-drop pour les grandes images.
+- **Navigation Souris** : Déplacement fluide dans l'image si elle dépasse la taille de la fenêtre.
+
+## Technologies Utilisées
+
+- **Java** : Langage de base pour la logique algorithmique.
+- **Swing** : Création des interfaces graphiques (GUI) pour les deux applications.
+- **Algorithmique** : Implémentation manuelle des Arbres Binaires, Files de Priorité et du Codage Canonique de Huffman.

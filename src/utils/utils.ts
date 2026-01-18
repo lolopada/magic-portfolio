@@ -13,13 +13,14 @@ type Team = {
 type Metadata = {
   title: string;
   subtitle?: string;
-  publishedAt: string;
+  publishedAt?: string;
   summary: string;
   image?: string;
   images: string[];
   tag?: string;
   team: Team[];
   link?: string;
+  github?: string;
 };
 
 import { notFound } from "next/navigation";
@@ -50,9 +51,10 @@ function readMDXFile(filePath: string) {
     tag: data.tag || [],
     team: data.team ? data.team.map((member: Team) => ({
       ...member,
-      avatar: getImagePath(member.avatar)
+      avatar: member.avatar ? getImagePath(member.avatar) : undefined
     })) : [],
     link: data.link || "",
+    github: data.github || "",
   };
 
   return { metadata, content };

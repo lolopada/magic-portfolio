@@ -1,0 +1,43 @@
+---
+title: "TV Show Platform (SAE 2.02)"
+github: "https://github.com/lolopada/TV-Show-Platform"
+publishedAt: "2024-06-01"
+summary: "Plateforme web communautaire pour consulter des séries TV, gérer son profil et partager des critiques."
+images:
+  - "/images/projects/sae202/cover.jpg"
+team:
+  - name: "Loïc Sainton"
+    role: "Co-Développeur"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/loic-sainton/"
+  - name: "Nicolas Miekisiak"
+    role: "Co-Développeur"
+  - name: "Mathis Pauron"
+    role: "Co-Développeur"
+---
+
+## Aperçu
+
+Ce projet, réalisé dans le cadre de la SAE 2.02, est une application web dynamique permettant aux utilisateurs d'explorer une base de données de séries TV. L'objectif était de mettre en pratique l'architecture **MVC (Modèle-Vue-Contrôleur)** avec un framework PHP robuste.
+
+[Voir le site en ligne](https://dwarves.iut-fbleau.fr/~sainton/SAE2.02/)
+
+## Fonctionnalités
+
+- **Navigation & Recherche** : Catalogue complet de séries avec fiches détaillées (saisons, épisodes, casting).
+- **Espace Membre** : 
+  - Inscription et authentification sécurisée.
+  - Gestion de profil utilisateur.
+- **Système de Critiques** :
+  - Les utilisateurs peuvent poster des avis et noter les séries.
+  - Affichage dynamique des dernières critiques.
+- **Administration** : Gestion des utilisateurs et du contenu (selon droits).
+
+## Architecture Technique
+
+Le projet repose sur le framework **CodeIgniter 3**, choisi pour sa légèreté et sa structure MVC claire.
+
+- **Backend** : PHP 8, CodeIgniter 3.
+- **Base de Données** : MySQL (Relationnel : Users, TVShows, Reviews).
+- **Frontend** : HTML5, CSS3, Bootstrap pour le responsive design.
+- **Sécurité** : Protection XSS, hachage des mots de passe, validation des formulaires.

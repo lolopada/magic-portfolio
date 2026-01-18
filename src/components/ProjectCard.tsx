@@ -19,6 +19,7 @@ interface ProjectCardProps {
   description: string;
   avatars: { src: string }[];
   link: string;
+  github?: string;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -29,6 +30,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   avatars,
   link,
+  github,
 }) => {
   return (
     <Column fillWidth gap="m">
@@ -62,25 +64,36 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                 {description}
               </Text>
             )}
-            <Flex gap="24" wrap>
+            <Flex fillWidth horizontal="between" vertical="center" gap="24" wrap>
               {content?.trim() && (
                 <SmartLink
                   suffixIcon="arrowRight"
                   style={{ margin: "0", width: "fit-content" }}
                   href={href}
                 >
-                  <Text variant="body-default-s">Read case study</Text>
+                  <Text variant="body-default-s">Plus d'informations</Text>
                 </SmartLink>
               )}
-              {link && (
-                <SmartLink
-                  suffixIcon="arrowUpRightFromSquare"
-                  style={{ margin: "0", width: "fit-content" }}
-                  href={link}
-                >
-                  <Text variant="body-default-s">View project</Text>
-                </SmartLink>
-              )}
+              <Flex gap="16">
+                {github && (
+                  <SmartLink
+                    suffixIcon="github"
+                    style={{ margin: "0", width: "fit-content" }}
+                    href={github}
+                  >
+                    <Text variant="body-default-s">GitHub</Text>
+                  </SmartLink>
+                )}
+                {link && (
+                  <SmartLink
+                    suffixIcon="arrowUpRightFromSquare"
+                    style={{ margin: "0", width: "fit-content" }}
+                    href={link}
+                  >
+                    <Text variant="body-default-s">View project</Text>
+                  </SmartLink>
+                )}
+              </Flex>
             </Flex>
           </Column>
         )}

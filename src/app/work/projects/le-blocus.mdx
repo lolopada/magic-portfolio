@@ -1,0 +1,38 @@
+---
+title: "Le Blocus"
+github: "https://github.com/lolopada/Le-Blocus"
+publishedAt: "2024-01-01"
+summary: "Jeu de stratégie au tour par tour développé en C avec une bibliothèque graphique X11."
+images:
+  - "/images/projects/blocus/cover.jpg"
+team:
+  - name: "Loïc Sainton"
+    role: "Développeur"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/loic-sainton/"
+---
+
+## Aperçu
+
+**Le Blocus** est un jeu de stratégie duel où l'objectif est d'immobiliser l'adversaire. Chaque joueur déplace son pion et condamne une case du plateau à chaque tour, réduisant progressivement l'espace de jeu disponible.
+
+## Règles du Jeu
+
+1. **Déplacement** : Chaque joueur bouge son pion d'une case (adjacente ou diagonale).
+2. **Condamnation** : Le joueur choisit ensuite une case vide du plateau pour la détruire définitivement.
+3. **Victoire** : Le dernier joueur pouvant encore bouger gagne la partie.
+
+## Développement & Technique
+
+Ce projet a été réalisé en langage **C**, mettant l'accent sur la gestion bas niveau de la mémoire et des structures de données.
+
+- **Bibliothèque Graphique** : Utilisation d'une "librairie graphique" pédagogique basée sur **X11/XLib** pour l'affichage fenêtre et la gestion des événements (clics, clavier).
+- **Algorithme** :
+  - Gestion de la grille et des états des cases (Libre, Joueur 1, Joueur 2, Détruite).
+  - Implémentation d'une **IA simple** pour le mode solo, capable d'évaluer les coups possibles.
+- **Interface** : Menus graphiques, affichage dynamique du plateau et sprites personnalisés pour les pions et les cases détruites.
+
+## Modes de Jeu
+
+- **Joueur vs Joueur** : Affrontez un ami sur le même ordinateur.
+- **Joueur vs IA** : Testez votre stratégie contre l'ordinateur.

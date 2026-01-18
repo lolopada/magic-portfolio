@@ -1,0 +1,53 @@
+---
+title: "Java SSPM Reader"
+github: "https://github.com/lolopada/java-sspm-reader"
+publishedAt: "2025-01-01"
+summary: "Bibliothèque Java complète pour lire et analyser les fichiers SSPM (SoundSpace Player Map) version 2."
+team:
+  - name: "Loïc Sainton"
+    role: "Développeur"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/loic-sainton/"
+---
+
+## Aperçu
+
+**SSPM Reader** est une bibliothèque Java conçue pour faciliter l'interaction avec le format de fichier **SSPM (SoundSpace Player Map)**. Ce format est utilisé pour stocker des données de jeux de rythme, incluant les notes, la musique, et les métadonnées de la carte.
+
+## Fonctionnalités Clés
+
+- **Lecture Complète** : Support total de la spécification SSPM V2.
+- **Extraction de Données** :
+  - **Métadonnées** : Titre, artiste, créateur, difficulté, durée.
+  - **Notes** : Accès performant à la liste des notes avec leurs timestamps et positions.
+  - **Audio** : Extraction automatique du flux audio intégré (MP3/OGG).
+  - **Cover Art** : Récupération de l'image de couverture.
+- **Facilité d'Utilisation** : Une classe statique `SSPMReader` permet de charger un fichier en une ligne de code.
+
+## Technologies Utilisées
+
+- **Java** : Langage principal pour la portabilité et la robustesse.
+- **IO Streams** : Manipulation fine des flux binaires pour le parsing du format custom.
+
+## Exemple d'Utilisation
+
+```java
+// Lire un fichier SSPM
+SSPMData data = SSPMReader.readSSPMFile("ma_carte.sspm");
+
+if (data != null) {
+    System.out.println("Titre : " + data.getStrings().getSongName());
+    System.out.println("Difficulté : " + data.getMetadata().getDifficultyName());
+    
+    // Parcourir les notes
+    for (SSPMNote note : data.getNotes().getNotes()) {
+        System.out.println("Note à " + note.getTimestamp() + "ms");
+    }
+}
+```
+
+## Structure du Projet
+
+Le projet est organisé de manière modulaire :
+- `SSPMReader` : Point d'entrée.
+- `SSPMData` : Objet conteneur principal.
