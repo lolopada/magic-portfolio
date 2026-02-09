@@ -1,6 +1,7 @@
 {
-  "name": "@once-ui-system/magic-portfolio",
+  "name": "magic-portfolio",
   "version": "2.3.0",
+  "homepage": "https://lolopada.github.io/magic-portfolio",
   "scripts": {
     "dev": "next dev",
     "export": "next export",

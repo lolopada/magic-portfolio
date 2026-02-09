@@ -5,7 +5,7 @@ import { getImagePath } from "@/utils/paths";
 const person: Person = {
   firstName: "Loïc",
   lastName: "Sainton",
-  name: `Loïc Sainton`,
+  name: "Loïc Sainton",
   role: "Etudiant",
   avatar: getImagePath("/images/avatar.jpg"),
   email: "sainton.loic1@gmail.com",

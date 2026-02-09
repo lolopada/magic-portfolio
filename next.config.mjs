@@ -10,8 +10,14 @@ const nextConfig = {
   output: 'export',
   trailingSlash: false,
   distDir: 'out',
-  // Pas de basePath pour un domaine personnalisé à la racine
-  // Le site sera accessible directement à https://www.paada.fr/
+  basePath: '/magic-portfolio',
+  assetPrefix: '/magic-portfolio/',
+  env: {
+    NEXT_PUBLIC_BASE_PATH: '/magic-portfolio',
+  },
+
+
+
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   transpilePackages: ["next-mdx-remote"],
   images: {
