@@ -14,7 +14,7 @@ import {
 import { home } from "./index";
 
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
-const baseURL: string = "https://lolopada.github.io/magic-portfolio";
+const baseURL: string = "https://www.paada.fr";
 
 const routes: RoutesConfig = {
   "/": true,

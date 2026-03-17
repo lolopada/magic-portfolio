@@ -10,13 +10,7 @@ const nextConfig = {
   output: 'export',
   trailingSlash: false,
   distDir: 'out',
-  basePath: '/magic-portfolio',
-  assetPrefix: '/magic-portfolio/',
-  env: {
-    NEXT_PUBLIC_BASE_PATH: '/magic-portfolio',
-  },
-
-
+  env: {},
 
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   transpilePackages: ["next-mdx-remote"],
