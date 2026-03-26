@@ -12,6 +12,7 @@ import {
   HiOutlineDocument,
   HiOutlineGlobeAsiaAustralia,
   HiOutlineRocketLaunch,
+  HiArrowDownTray,
 } from "react-icons/hi2";
 
 import {
@@ -91,6 +92,7 @@ export const iconLibrary: Record<string, IconType> = {
   libgdx: HiOutlineRocketLaunch,
   FaStar: FaStar,
   PiPlantFill: PiPlantFill,
+  download: HiArrowDownTray,
 };
 
 export type IconLibrary = typeof iconLibrary;

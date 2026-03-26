@@ -75,7 +75,7 @@ const home: Home = {
   },
   subline: (
     <>
-      Curieux de nature, j’aime explorer de nouvelles technos et coder des solutions dès que j'en ai besoin.
+      Curieux de nature, j’aime explorer des technos et coder pour le plaisir ou pour répondre a un de mes besoins.
     </>
   ),
 };
