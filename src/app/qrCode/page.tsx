@@ -37,7 +37,7 @@ export default function QrCodePage() {
         >
           {/* Curriculum Vitae */}
           <a
-            href="/documents/cv.pdf"
+            href="/documents/CV-LOIC-SAINTON.pdf"
             download
             style={{ textDecoration: "none", display: "flex" }}
           >
@@ -93,7 +93,7 @@ export default function QrCodePage() {
 
           {/* Lettre de Motivation */}
           <a
-            href="/documents/lettre-de-motivation.pdf"
+            href="/documents/LM-LOIC-SAINTON.pdf"
             download
             style={{ textDecoration: "none", display: "flex" }}
           >
