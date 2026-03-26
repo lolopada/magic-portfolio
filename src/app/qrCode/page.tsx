@@ -36,9 +36,14 @@ export default function QrCodePage() {
           }}
         >
           {/* Curriculum Vitae */}
-          <a
-            href="/documents/CV-LOIC-SAINTON.pdf"
-            download
+          <div
+            onClick={() => {
+              fetch("/documents/CV-LOIC-SAINTON.pdf", { method: "HEAD" })
+                .then((res) => {
+                  if (res.ok) window.open("/documents/CV-LOIC-SAINTON.pdf", "_blank");
+                })
+                .catch(() => {});
+            }}
             style={{ textDecoration: "none", display: "flex" }}
           >
             <Column
@@ -75,7 +80,7 @@ export default function QrCodePage() {
                 Curriculum Vitae
               </Heading>
               <Text variant="body-default-m" onBackground="neutral-weak" align="center">
-                Télécharger mon CV au format PDF
+                Consulter mon CV au format PDF
               </Text>
               <Row
                 gap="8"
@@ -86,15 +91,20 @@ export default function QrCodePage() {
                 style={{ marginTop: 8 }}
               >
                 <Icon name="download" size="s" />
-                <Text variant="label-strong-m">Télécharger</Text>
+                <Text variant="label-strong-m">Consulter CV</Text>
               </Row>
             </Column>
-          </a>
+          </div>
 
           {/* Lettre de Motivation */}
-          <a
-            href="/documents/LM-LOIC-SAINTON.pdf"
-            download
+          <div
+            onClick={() => {
+              fetch("/documents/LM-LOIC-SAINTON.pdf", { method: "HEAD" })
+                .then((res) => {
+                  if (res.ok) window.open("/documents/LM-LOIC-SAINTON.pdf", "_blank");
+                })
+                .catch(() => {});
+            }}
             style={{ textDecoration: "none", display: "flex" }}
           >
             <Column
@@ -131,7 +141,7 @@ export default function QrCodePage() {
                 Lettre de Motivation
               </Heading>
               <Text variant="body-default-m" onBackground="neutral-weak" align="center">
-                Télécharger ma lettre au format PDF
+                Consulter ma lettre au format PDF
               </Text>
               <Row
                 gap="8"
@@ -142,10 +152,10 @@ export default function QrCodePage() {
                 style={{ marginTop: 8 }}
               >
                 <Icon name="download" size="s" />
-                <Text variant="label-strong-m">Télécharger</Text>
+                <Text variant="label-strong-m">Consulter LM</Text>
               </Row>
             </Column>
-          </a>
+          </div>
         </div>
       </RevealFx>
     </Column>
