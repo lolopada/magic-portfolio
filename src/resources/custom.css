@@ -108,8 +108,45 @@
   background-image: linear-gradient(90deg, #000000 0%, #24c6dc 50%, #514a9d 100%);
 }
 
-/* Custom project card image fitting */
 .image-fit-contain img {
   object-fit: contain !important;
   background-color: var(--scheme-neutral-200);
+}
+
+/* PIF Image Compressor - Specific fitting to reduce height */
+.image-fit-pif > :first-child {
+  aspect-ratio: 2.35 / 1 !important; /* Cinematic/Wider aspect ratio to reduce height */
+}
+
+.image-fit-pif img {
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+.gradient-button {
+  background: linear-gradient(135deg, rgba(36, 198, 220, 0.15) 0%, rgba(81, 74, 157, 0.2) 100%) !important;
+  color: var(--neutral-on-background-strong) !important;
+  border: 1px solid rgba(36, 198, 220, 0.2) !important;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease !important;
+}
+
+.gradient-button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, rgba(36, 198, 220, 0.25) 0%, rgba(81, 74, 157, 0.35) 100%) !important;
+  box-shadow: 0 8px 20px rgba(36, 198, 220, 0.15);
+  border-color: rgba(36, 198, 220, 0.4) !important;
+}
+
+.gradient-button:active {
+  transform: translateY(0);
+}
+
+[data-theme="light"] .gradient-button {
+  box-shadow: 0 4px 12px rgba(81, 74, 157, 0.05);
+}
+
+[data-theme="light"] .gradient-button:hover {
+  box-shadow: 0 8px 20px rgba(81, 74, 157, 0.1);
 }

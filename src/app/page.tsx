@@ -11,7 +11,7 @@ import {
   Meta,
   Line,
 } from "@once-ui-system/core";
-import { home, about, person, baseURL, routes } from "@/resources";
+import { home, about, person, baseURL, routes, work } from "@/resources";
 import { Mailchimp } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
@@ -75,9 +75,10 @@ export default function Home() {
               {home.subline}
             </Text>
           </RevealFx>
-          <RevealFx paddingTop="12" delay={0.4} horizontal="center" paddingLeft="12">
+          <RevealFx delay={0.4} horizontal="center" fillWidth>
             <Button
               id="about"
+              className="gradient-button"
               data-border="rounded"
               href={about.path}
               variant="secondary"
@@ -100,9 +101,29 @@ export default function Home() {
           </RevealFx>
         </Column>
       </Column>
-      <RevealFx translateY="16" delay={0.6}>
-        <Projects range={[1, 2]} />
-      </RevealFx>
+      <Column fillWidth horizontal="center" gap="m">
+        <RevealFx translateY="12" delay={0.5} horizontal="center" fillWidth>
+          <Heading as="h2" variant="display-strong-xs">
+            Dernières réalisations
+          </Heading>
+        </RevealFx>
+        <RevealFx translateY="16" delay={0.6} horizontal="center" fillWidth>
+          <Projects range={[1, 3]} />
+        </RevealFx>
+        <RevealFx translateY="12" delay={0.7} horizontal="center" fillWidth>
+          <Button
+            className="gradient-button"
+            data-border="rounded"
+            href={work.path}
+            variant="secondary"
+            size="m"
+            weight="default"
+            arrowIcon
+          >
+            Voir tous les projets
+          </Button>
+        </RevealFx>
+      </Column>
       {routes["/blog"] && (
         <Column fillWidth gap="24" marginBottom="l">
           <Row fillWidth paddingRight="64">
