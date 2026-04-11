@@ -111,6 +111,11 @@ export default async function Project({
             <Text variant="label-default-m">GitHub</Text>
           </SmartLink>
         )}
+        {post.metadata.link && (
+          <SmartLink href={post.metadata.link} suffixIcon="arrowUpRightFromSquare">
+            <Text variant="label-default-m">Site web</Text>
+          </SmartLink>
+        )}
       </Row>
       {post.metadata.image && (
         <Media

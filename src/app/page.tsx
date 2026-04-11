@@ -108,7 +108,7 @@ export default function Home() {
           </Heading>
         </RevealFx>
         <RevealFx translateY="16" delay={0.6} horizontal="center" fillWidth>
-          <Projects range={[1, 3]} />
+          <Projects range={[1, 4]} columns={2} compact />
         </RevealFx>
         <RevealFx translateY="12" delay={0.7} horizontal="center" fillWidth>
           <Button

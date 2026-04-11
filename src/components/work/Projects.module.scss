@@ -1,17 +1,35 @@
-.hover {
-    transition: var(--transition-micro-medium);
+@use "../breakpoints.scss" as breakpoints;
 
-    &:hover {
-        transform: translateX(var(--static-space-8));
+.projectsGrid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    padding-inline: 1.5rem;
+    align-items: stretch;
+}
 
-        .indicator {
-            transform: rotate(0);
-        }
+.twoColumns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 1fr;
+
+    @media (max-width: breakpoints.$m) {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
     }
 }
 
-.indicator {
-    transform: rotate(-90deg);
-    left: -2rem;
-    transition: var(--transition-micro-medium);
+.compact {
+    gap: 1.5rem;
+}
+
+.projectItem {
+    min-width: 0;
+    display: flex;
+
+    > * {
+        width: 100%;
+        height: 100%;
+    }
 }

@@ -9,6 +9,7 @@ import {
   SmartLink,
   Text,
 } from "@once-ui-system/core";
+import styles from "./ProjectCard.module.scss";
 
 interface ProjectCardProps {
   href: string;
@@ -21,6 +22,7 @@ interface ProjectCardProps {
   link: string;
   github?: string;
   imageFit?: string;
+  compact?: boolean;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -33,36 +35,55 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   link,
   github,
   imageFit,
+  compact = false,
 }) => {
+  const hasImages = images.length > 0;
+  const headingVariant = compact ? "heading-strong-l" : "heading-strong-xl";
+  const bodyVariant = compact ? "body-default-xs" : "body-default-s";
+  const carouselSizes = compact ? "(max-width: 960px) 100vw, 520px" : "(max-width: 960px) 100vw, 960px";
+  const cardClassName = [
+    styles.card,
+    compact ? styles.compact : "",
+    imageFit ? `image-fit-${imageFit}` : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   return (
-    <Column fillWidth gap="m" className={imageFit ? `image-fit-${imageFit}` : ''}>
-      <Carousel
-        sizes="(max-width: 960px) 100vw, 960px"
-        items={images.map((image) => ({
-          slide: image,
-          alt: title,
-        }))}
-      />
+    <Column fillWidth gap={compact ? "s" : "m"} className={cardClassName}>
+      {hasImages ? (
+        <Carousel
+          aspectRatio="16 / 9"
+          sizes={carouselSizes}
+          items={images.map((image) => ({
+            slide: image,
+            alt: title,
+          }))}
+        />
+      ) : (
+        <div className={styles.mediaPlaceholder} aria-hidden="true" />
+      )}
       <Flex
         s={{ direction: "column" }}
         fillWidth
-        paddingX="s"
-        paddingTop="12"
-        paddingBottom="24"
-        gap="l"
+        className={styles.content}
+        paddingX={compact ? "12" : "s"}
+        paddingTop={compact ? "8" : "12"}
+        paddingBottom={compact ? "16" : "24"}
+        gap={compact ? "m" : "l"}
       >
         {title && (
           <Flex flex={5}>
-            <Heading as="h2" wrap="balance" variant="heading-strong-xl">
+            <Heading as="h2" wrap="balance" variant={headingVariant}>
               {title}
             </Heading>
           </Flex>
         )}
         {(avatars?.length > 0 || description?.trim() || content?.trim()) && (
           <Column flex={7} gap="16">
-            {avatars?.length > 0 && <AvatarGroup avatars={avatars} size="m" reverse />}
+            {avatars?.length > 0 && <AvatarGroup avatars={avatars} size={compact ? "s" : "m"} reverse />}
             {description?.trim() && (
-              <Text wrap="balance" variant="body-default-s" onBackground="neutral-weak">
+              <Text wrap="balance" variant={bodyVariant} onBackground="neutral-weak">
                 {description}
               </Text>
             )}
@@ -73,7 +94,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   style={{ margin: "0", width: "fit-content" }}
                   href={href}
                 >
-                  <Text variant="body-default-s">Plus d'informations</Text>
+                  <Text variant={bodyVariant}>Plus d'informations</Text>
                 </SmartLink>
               )}
               <Flex gap="16">
@@ -83,7 +104,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                     style={{ margin: "0", width: "fit-content" }}
                     href={github}
                   >
-                    <Text variant="body-default-s">GitHub</Text>
+                    <Text variant={bodyVariant}>GitHub</Text>
                   </SmartLink>
                 )}
                 {link && (
@@ -92,7 +113,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                     style={{ margin: "0", width: "fit-content" }}
                     href={link}
                   >
-                    <Text variant="body-default-s">View project</Text>
+                    <Text variant={bodyVariant}>View project</Text>
                   </SmartLink>
                 )}
               </Flex>

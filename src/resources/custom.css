@@ -113,9 +113,9 @@
   background-color: var(--scheme-neutral-200);
 }
 
-/* PIF Image Compressor - Specific fitting to reduce height */
+/* Keep project cards visually symmetric on /work */
 .image-fit-pif > :first-child {
-  aspect-ratio: 2.35 / 1 !important; /* Cinematic/Wider aspect ratio to reduce height */
+  aspect-ratio: 16 / 9 !important;
 }
 
 .image-fit-pif img {
