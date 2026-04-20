@@ -7,5 +7,6 @@ export { RouteGuard } from "@/components/RouteGuard";
 export { Providers } from "@/components/Providers";
 export { ScrollToHash } from "@/components/ScrollToHash";
 export { ThemeToggle } from "@/components/ThemeToggle";
+export { CurrentTask } from "@/components/CurrentTask";
 export { CustomMDX } from "@/components/mdx";
 export { default as MouseHalo } from "@/components/MouseHalo";
