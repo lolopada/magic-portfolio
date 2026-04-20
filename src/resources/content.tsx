@@ -146,6 +146,15 @@ const about: About = {
     title: "Formation",
     institutions: [
       {
+        name: "Cycle Ingénieur en Informatique (lère année)",
+        description: (
+          <>
+            Évry-Courcouronnes (91) • 2026 - 2029
+          </>
+        ),
+        details: []
+      },
+      {
         name: "Bachelor Universitaire de Technologie Informatique",
         description: (
           <>
@@ -246,6 +255,38 @@ const about: About = {
       {
         title: "LibGDX",
         icon: "libgdx",
+      },
+      {
+        title: "Proxmox VE",
+        icon: "docker",
+      },
+      {
+        title: "Reverse Proxy",
+        icon: "globe",
+      },
+      {
+        title: "Monitoring",
+        icon: "eye",
+      },
+      {
+        title: "API REST",
+        icon: "rocket",
+      },
+      {
+        title: "CodeIgniter 3",
+        icon: "php",
+      },
+      {
+        title: "Riot.js",
+        icon: "javascript",
+      },
+      {
+        title: "Architecture MVC",
+        icon: "grid",
+      },
+      {
+        title: "opendata",
+        icon: "document",
       },
       {
         title: "Linux / Bash",
