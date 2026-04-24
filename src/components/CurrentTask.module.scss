@@ -122,7 +122,8 @@
 @media (max-width: breakpoints.$s) {
   .toast {
     right: var(--static-space-12, 0.75rem);
-    bottom: var(--static-space-12, 0.75rem);
+    top: max(var(--static-space-12, 0.75rem), env(safe-area-inset-top));
+    bottom: auto;
     max-width: min(22rem, calc(100vw - 1rem));
     padding: 0.6rem 0.7rem;
     gap: 0.4rem;
