@@ -8,8 +8,14 @@ import {
   Icon,
   RevealFx,
 } from "@once-ui-system/core";
+import { activeThemeUi } from "@/resources";
 
 export default function QrCodePage() {
+  const hoverTranslateY = activeThemeUi.flatCards ? "translateY(-2px)" : "translateY(-6px)";
+  const hoverShadow = activeThemeUi.flatCards
+    ? "0 8px 18px rgba(24, 31, 38, 0.08)"
+    : "0 20px 40px rgba(0,0,0,0.15)";
+
   return (
     <Column
       maxWidth="m"
@@ -52,8 +58,8 @@ export default function QrCodePage() {
               gap="m"
               padding="xl"
               radius="xl"
-              border="neutral-alpha-weak"
-              background="surface"
+              border={activeThemeUi.flatCards ? "neutral-alpha-medium" : "neutral-alpha-weak"}
+              background={activeThemeUi.flatCards ? "page" : "surface"}
               fillWidth
               style={{
                 cursor: "pointer",
@@ -62,9 +68,8 @@ export default function QrCodePage() {
                 justifyContent: "center",
               }}
               onMouseEnter={(e: React.MouseEvent<HTMLDivElement>) => {
-                e.currentTarget.style.transform = "translateY(-6px)";
-                e.currentTarget.style.boxShadow =
-                  "0 20px 40px rgba(0,0,0,0.15)";
+                e.currentTarget.style.transform = hoverTranslateY;
+                e.currentTarget.style.boxShadow = hoverShadow;
               }}
               onMouseLeave={(e: React.MouseEvent<HTMLDivElement>) => {
                 e.currentTarget.style.transform = "translateY(0)";
@@ -113,8 +118,8 @@ export default function QrCodePage() {
               gap="m"
               padding="xl"
               radius="xl"
-              border="neutral-alpha-weak"
-              background="surface"
+              border={activeThemeUi.flatCards ? "neutral-alpha-medium" : "neutral-alpha-weak"}
+              background={activeThemeUi.flatCards ? "page" : "surface"}
               fillWidth
               style={{
                 cursor: "pointer",
@@ -123,9 +128,8 @@ export default function QrCodePage() {
                 justifyContent: "center",
               }}
               onMouseEnter={(e: React.MouseEvent<HTMLDivElement>) => {
-                e.currentTarget.style.transform = "translateY(-6px)";
-                e.currentTarget.style.boxShadow =
-                  "0 20px 40px rgba(0,0,0,0.15)";
+                e.currentTarget.style.transform = hoverTranslateY;
+                e.currentTarget.style.boxShadow = hoverShadow;
               }}
               onMouseLeave={(e: React.MouseEvent<HTMLDivElement>) => {
                 e.currentTarget.style.transform = "translateY(0)";

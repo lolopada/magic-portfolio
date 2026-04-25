@@ -24,6 +24,61 @@
   animation: toast-enter 420ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
+:global(html[data-style-preset="minimal"]) .toast {
+  background: var(--page-background);
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-color: var(--neutral-alpha-strong);
+  animation: none;
+}
+
+:global(html[data-style-preset="tech-blueprint"]) .toast {
+  background: color-mix(in srgb, var(--brand-alpha-weak) 28%, var(--page-background) 72%);
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-color: var(--brand-alpha-medium);
+  animation: none;
+}
+
+:global(html[data-style-preset="mono-pro"]) .toast {
+  background: var(--page-background);
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-color: var(--neutral-alpha-strong);
+  animation: none;
+}
+
+:global(html[data-style-preset="warm-craft"]) .toast {
+  background: color-mix(in srgb, var(--accent-alpha-weak) 24%, var(--page-background) 76%);
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-color: color-mix(in srgb, var(--brand-alpha-medium) 55%, var(--accent-alpha-medium) 45%);
+  animation: none;
+}
+
+:global(html[data-style-preset="neon-dark-lab"]) .toast {
+  background: color-mix(in srgb, var(--accent-alpha-weak) 22%, var(--page-background) 78%);
+  box-shadow: 0 0 14px rgba(6, 182, 212, 0.16);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-color: color-mix(in srgb, var(--accent-alpha-medium) 72%, var(--brand-alpha-medium) 28%);
+  animation: none;
+}
+
+:global(html[data-style-preset="brutalist-soft"]) .toast {
+  background: color-mix(in srgb, var(--accent-alpha-weak) 22%, var(--page-background) 78%);
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 2px solid var(--neutral-alpha-strong);
+  border-radius: 0.45rem;
+  animation: none;
+}
+
 .topRow {
   display: flex;
   align-items: center;
@@ -50,6 +105,41 @@
   background: #3df78c;
   box-shadow: 0 0 0 0 rgba(61, 247, 140, 0.55);
   animation: live-pulse 2.4s ease-out infinite;
+}
+
+:global(html[data-style-preset="minimal"]) .liveDot {
+  box-shadow: none;
+  animation: none;
+}
+
+:global(html[data-style-preset="tech-blueprint"]) .liveDot {
+  background: #06b6d4;
+  box-shadow: none;
+  animation: none;
+}
+
+:global(html[data-style-preset="mono-pro"]) .liveDot {
+  background: var(--neutral-on-background-medium);
+  box-shadow: none;
+  animation: none;
+}
+
+:global(html[data-style-preset="warm-craft"]) .liveDot {
+  background: #b45b3e;
+  box-shadow: none;
+  animation: none;
+}
+
+:global(html[data-style-preset="neon-dark-lab"]) .liveDot {
+  background: #22d3ee;
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.45);
+  animation: none;
+}
+
+:global(html[data-style-preset="brutalist-soft"]) .liveDot {
+  background: #111827;
+  box-shadow: none;
+  animation: none;
 }
 
 .liveLabel {

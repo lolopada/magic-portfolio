@@ -9,7 +9,7 @@ const withMDX = mdx({
 const nextConfig = {
   output: 'export',
   trailingSlash: false,
-  distDir: 'out',
+  distDir: '.next',
   env: {},
 
   pageExtensions: ["ts", "tsx", "md", "mdx"],

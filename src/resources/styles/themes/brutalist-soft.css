@@ -1,0 +1,56 @@
+[data-style-preset="brutalist-soft"] .gradient-headline {
+  font-size: 6.6rem;
+  line-height: 0.92;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: var(--neutral-on-background-strong);
+  display: inline-block;
+}
+
+@media (max-width: 752px) {
+  [data-style-preset="brutalist-soft"] .gradient-headline {
+    font-size: 3.8rem;
+  }
+}
+
+[data-style-preset="brutalist-soft"] .gradient-subheadline {
+  font-size: 1.65rem;
+  line-height: 1.18;
+  letter-spacing: 0;
+  color: var(--neutral-on-background-medium);
+  max-width: 38ch;
+  display: block;
+}
+
+@media (max-width: 752px) {
+  [data-style-preset="brutalist-soft"] .gradient-subheadline {
+    font-size: 1.3rem;
+  }
+}
+
+[data-style-preset="brutalist-soft"] .gradient-timeline-title {
+  color: color-mix(in srgb, var(--brand-on-background-strong) 82%, black 18%);
+  letter-spacing: 0.01em;
+  display: inline-block;
+}
+
+[data-style-preset="brutalist-soft"] .gradient-button {
+  background: color-mix(in srgb, var(--accent-background-medium) 40%, var(--page-background) 60%) !important;
+  color: var(--neutral-on-background-strong) !important;
+  border: 2px solid var(--neutral-alpha-strong) !important;
+  border-radius: 0.35rem !important;
+  box-shadow: none;
+  transition: transform 0.12s ease !important;
+}
+
+[data-style-preset="brutalist-soft"] .gradient-button:hover {
+  transform: translate(-2px, -2px);
+}
+
+[data-style-preset="brutalist-soft"] .gradient-button:active {
+  transform: translate(0, 0);
+}
+
+[data-style-preset="brutalist-soft"] .mouse-halo {
+  display: none !important;
+}

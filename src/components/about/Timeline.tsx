@@ -1,4 +1,5 @@
 import { Column, Row, Text } from "@once-ui-system/core";
+import { activeThemeUi } from "@/resources";
 
 interface TimelineDetail {
     icon?: string;
@@ -14,6 +15,8 @@ interface TimelineItemProps {
 }
 
 export default function Timeline({ items }: { items: TimelineItemProps[] }) {
+    const useGlow = activeThemeUi.timelineGlow;
+
     return (
         <Column fillWidth gap="40">
             {items.map((item, index) => (
@@ -28,9 +31,11 @@ export default function Timeline({ items }: { items: TimelineItemProps[] }) {
                                     top: "24px",
                                     bottom: "-40px",
                                     width: "2px",
-                                    background: "linear-gradient(180deg, #24c6dc 0%, #514a9d 100%)",
+                                    background: useGlow
+                                        ? "linear-gradient(180deg, #24c6dc 0%, #514a9d 100%)"
+                                        : "var(--neutral-alpha-medium)",
                                     zIndex: 0,
-                                    opacity: 0.6,
+                                    opacity: useGlow ? 0.6 : 1,
                                 }}
                             />
                         )}
@@ -40,9 +45,11 @@ export default function Timeline({ items }: { items: TimelineItemProps[] }) {
                                 width: "12px",
                                 height: "12px",
                                 borderRadius: "50%",
-                                background: "linear-gradient(135deg, #24c6dc, #514a9d)",
+                                background: useGlow
+                                    ? "linear-gradient(135deg, #24c6dc, #514a9d)"
+                                    : "var(--brand-background-strong)",
                                 zIndex: 1,
-                                boxShadow: "0 0 16px rgba(36, 198, 220, 0.5)",
+                                boxShadow: useGlow ? "0 0 16px rgba(36, 198, 220, 0.5)" : "none",
                                 marginTop: "8px",
                                 flexShrink: 0,
                             }}

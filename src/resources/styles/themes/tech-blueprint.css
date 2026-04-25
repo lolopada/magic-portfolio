@@ -1,0 +1,71 @@
+html[data-style-preset="tech-blueprint"] body {
+  background-image:
+    linear-gradient(to right, rgba(30, 64, 175, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(6, 182, 212, 0.035) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+[data-style-preset="tech-blueprint"] .gradient-headline {
+  font-size: 5.8rem;
+  line-height: 1.05;
+  padding-bottom: 0.18em;
+  padding-top: 0.08em;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  background-image: linear-gradient(90deg, #1f4ed8 0%, #2563eb 45%, #06b6d4 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  display: inline-block;
+}
+
+@media (max-width: 752px) {
+  [data-style-preset="tech-blueprint"] .gradient-headline {
+    font-size: 3.35rem;
+  }
+}
+
+[data-style-preset="tech-blueprint"] .gradient-subheadline {
+  font-size: 2rem;
+  line-height: 1.24;
+  padding-bottom: 0.14em;
+  letter-spacing: -0.015em;
+  color: var(--neutral-on-background-medium);
+  display: block;
+}
+
+@media (max-width: 752px) {
+  [data-style-preset="tech-blueprint"] .gradient-subheadline {
+    font-size: 1.55rem;
+  }
+}
+
+[data-style-preset="tech-blueprint"] .gradient-timeline-title {
+  color: var(--brand-on-background-strong);
+  letter-spacing: -0.01em;
+  display: inline-block;
+}
+
+[data-style-preset="tech-blueprint"] .gradient-button {
+  background: color-mix(in srgb, var(--brand-alpha-weak) 42%, var(--page-background) 58%) !important;
+  color: var(--neutral-on-background-strong) !important;
+  border: 1px solid var(--brand-alpha-medium) !important;
+  border-radius: 0.55rem !important;
+  box-shadow: none;
+  transition: transform 0.18s ease, background-color 0.18s ease, border-color 0.18s ease !important;
+}
+
+[data-style-preset="tech-blueprint"] .gradient-button:hover {
+  transform: translateY(-1px);
+  background: color-mix(in srgb, var(--accent-alpha-medium) 28%, var(--page-background) 72%) !important;
+  border-color: var(--accent-alpha-strong) !important;
+}
+
+[data-style-preset="tech-blueprint"] .gradient-button:active {
+  transform: translateY(0);
+}
+
+[data-style-preset="tech-blueprint"] .mouse-halo {
+  display: none !important;
+}

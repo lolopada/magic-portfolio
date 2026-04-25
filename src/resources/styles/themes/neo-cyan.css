@@ -1,0 +1,82 @@
+[data-style-preset="neo-cyan"] .gradient-headline {
+  font-size: 7rem;
+  line-height: 1.1;
+  padding-bottom: 0.2em;
+  padding-top: 0.1em;
+  background-image: linear-gradient(to right, #24c6dc, #24c6dc, #514a9d);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  filter: drop-shadow(0px 0px 15px rgba(36, 198, 220, 0.5))
+    drop-shadow(0px 0px 30px rgba(81, 74, 157, 0.3));
+  display: inline-block;
+}
+
+@media (max-width: 752px) {
+  [data-style-preset="neo-cyan"] .gradient-headline {
+    font-size: 4rem;
+  }
+}
+
+[data-style-preset="neo-cyan"] .gradient-subheadline {
+  font-size: 3rem;
+  line-height: 1.2;
+  padding-bottom: 0.2em;
+  padding-top: 0.1em;
+  background-image: linear-gradient(to right, #24c6dc, #514a9d);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  filter: drop-shadow(0px 0px 10px rgba(36, 198, 220, 0.3))
+    drop-shadow(0px 0px 20px rgba(81, 74, 157, 0.2));
+  display: block;
+}
+
+@media (max-width: 752px) {
+  [data-style-preset="neo-cyan"] .gradient-subheadline {
+    font-size: 2rem;
+  }
+}
+
+[data-style-preset="neo-cyan"] .gradient-timeline-title {
+  background-image: linear-gradient(90deg, #ffffff 0%, #24c6dc 50%, #514a9d 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  display: inline-block;
+}
+
+[data-style-preset="neo-cyan"][data-theme="light"] .gradient-timeline-title {
+  background-image: linear-gradient(90deg, #000000 0%, #24c6dc 50%, #514a9d 100%);
+}
+
+[data-style-preset="neo-cyan"] .gradient-button {
+  background: linear-gradient(135deg, rgba(36, 198, 220, 0.15) 0%, rgba(81, 74, 157, 0.2) 100%) !important;
+  color: var(--neutral-on-background-strong) !important;
+  border: 1px solid rgba(36, 198, 220, 0.2) !important;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease !important;
+}
+
+[data-style-preset="neo-cyan"] .gradient-button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, rgba(36, 198, 220, 0.25) 0%, rgba(81, 74, 157, 0.35) 100%) !important;
+  box-shadow: 0 8px 20px rgba(36, 198, 220, 0.15);
+  border-color: rgba(36, 198, 220, 0.4) !important;
+}
+
+[data-style-preset="neo-cyan"] .gradient-button:active {
+  transform: translateY(0);
+}
+
+[data-style-preset="neo-cyan"][data-theme="light"] .gradient-button {
+  box-shadow: 0 4px 12px rgba(81, 74, 157, 0.05);
+}
+
+[data-style-preset="neo-cyan"][data-theme="light"] .gradient-button:hover {
+  box-shadow: 0 8px 20px rgba(81, 74, 157, 0.1);
+}

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 import { Fade, Flex, Line, Row, ToggleButton } from "@once-ui-system/core";
 
-import { routes, display, person, about, blog, work, gallery } from "@/resources";
+import { routes, display, person, about, blog, work, gallery, activeThemeUi } from "@/resources";
 import { ThemeToggle } from "./ThemeToggle";
 import styles from "./Header.module.scss";
 
@@ -44,6 +44,7 @@ export default TimeDisplay;
 
 export const Header = () => {
   const pathname = usePathname() ?? "";
+  const isFlatHeader = activeThemeUi.flatHeader;
 
   return (
     <>
@@ -77,10 +78,10 @@ export const Header = () => {
         </Row>
         <Row fillWidth horizontal="center">
           <Row
-            background="page"
-            border="neutral-alpha-weak"
-            radius="m-4"
-            shadow="l"
+            background={isFlatHeader ? "surface" : "page"}
+            border={isFlatHeader ? "neutral-alpha-medium" : "neutral-alpha-weak"}
+            radius={isFlatHeader ? "m" : "m-4"}
+            shadow={isFlatHeader ? undefined : "l"}
             padding="4"
             horizontal="center"
             zIndex={1}

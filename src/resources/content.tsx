@@ -101,8 +101,7 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Actuellement en 2ème année de BUT Informatique à l'IUT de Fontainebleau,
-        je recherche un stage de 8 semaines minimum à compter de fin mars/début avril 2026.
+        Étudiant en BUT Informatique et futur apprenti ingénieur à l’ENSIIE, je recherche une alternance de 3 ans dès septembre 2026.
 
       </>
     ),

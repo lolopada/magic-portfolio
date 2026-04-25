@@ -1,0 +1,14 @@
+.image-fit-contain img {
+  object-fit: contain !important;
+  background-color: var(--scheme-neutral-200);
+}
+
+/* Keep project cards visually symmetric on /work */
+.image-fit-pif > :first-child {
+  aspect-ratio: 16 / 9 !important;
+}
+
+.image-fit-pif img {
+  object-fit: cover !important;
+  object-position: center !important;
+}

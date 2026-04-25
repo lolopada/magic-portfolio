@@ -1,7 +1,7 @@
 import Script from "next/script";
 import "@once-ui-system/core/css/styles.css";
 import "@once-ui-system/core/css/tokens.css";
-import "@/resources/custom.css";
+import "@/resources/styles/index.css";
 
 import classNames from "classnames";
 
@@ -15,7 +15,16 @@ import {
   SpacingToken,
 } from "@once-ui-system/core";
 import { Footer, Header, RouteGuard, Providers, MouseHalo, CurrentTask } from "@/components";
-import { baseURL, effects, fonts, style, dataStyle, home } from "@/resources";
+import {
+  baseURL,
+  effects,
+  fonts,
+  style,
+  dataStyle,
+  home,
+  activeThemePresetId,
+  activeThemeUi,
+} from "@/resources";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -53,7 +62,7 @@ export default async function RootLayout({
               (function() {
                 try {
                   const root = document.documentElement;
-                  const defaultTheme = 'system';
+                  const defaultTheme = '${style.theme}';
                   
                   // Set defaults from config
                   const config = ${JSON.stringify({
@@ -67,6 +76,7 @@ export default async function RootLayout({
               transition: style.transition,
               scaling: style.scaling,
               "viz-style": dataStyle.variant,
+              "style-preset": activeThemePresetId,
             })};
                   
                   // Apply default values
@@ -83,12 +93,12 @@ export default async function RootLayout({
                   };
                   
                   // Apply saved theme
-                  const savedTheme = localStorage.getItem('data-theme');
+                  const savedTheme = localStorage.getItem('data-theme') || defaultTheme;
                   const resolvedTheme = resolveTheme(savedTheme);
                   root.setAttribute('data-theme', resolvedTheme);
                   
                   // Apply any saved style overrides
-                  const styleKeys = Object.keys(config);
+                  const styleKeys = Object.keys(config).filter((key) => key !== 'style-preset');
                   styleKeys.forEach(key => {
                     const value = localStorage.getItem('data-' + key);
                     if (value) {
@@ -114,7 +124,7 @@ export default async function RootLayout({
           padding="0"
           horizontal="center"
         >
-          <MouseHalo />
+          {activeThemeUi.mouseHalo && <MouseHalo />}
           <Script
             defer
             src="https://static.cloudflareinsights.com/beacon.min.js"

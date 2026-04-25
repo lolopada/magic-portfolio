@@ -23,4 +23,6 @@ export {
   socialSharing,
   effects,
   dataStyle,
+  activeThemePresetId,
+  activeThemeUi,
 } from "./once-ui.config";
