@@ -1,6 +1,5 @@
 import { Column, Heading, Meta, Schema } from "@once-ui-system/core";
 import { baseURL, about, person, work } from "@/resources";
-import { CurrentTask } from "@/components";
 import { Projects } from "@/components/work/Projects";
 
 export async function generateMetadata() {
@@ -33,7 +32,6 @@ export default function Work() {
         {work.title}
       </Heading>
       <Projects columns={2} compact />
-      <CurrentTask />
     </Column>
   );
 }
