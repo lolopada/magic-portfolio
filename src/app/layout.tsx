@@ -14,7 +14,7 @@ import {
   RevealFx,
   SpacingToken,
 } from "@once-ui-system/core";
-import { Footer, Header, RouteGuard, Providers, MouseHalo, CurrentTask } from "@/components";
+import { Footer, Header, RouteGuard, Providers, MouseHalo } from "@/components";
 import {
   baseURL,
   effects,
@@ -179,7 +179,6 @@ export default async function RootLayout({
               <RouteGuard>{children}</RouteGuard>
             </Flex>
           </Flex>
-          <CurrentTask />
           <Footer />
         </Column>
       </Providers>
