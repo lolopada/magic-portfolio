@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { HiOutlineCodeBracket, HiXMark } from "react-icons/hi2";
+import { Button } from "@once-ui-system/core";
+import { HiArrowDownTray, HiXMark } from "react-icons/hi2";
 
 import styles from "./CurrentTask.module.scss";
 
@@ -13,27 +14,39 @@ export const CurrentTask = () => {
   }
 
   return (
-    <aside className={styles.toast} role="status" aria-live="polite" aria-label="Projet en cours">
+    <aside className={styles.toast} role="status" aria-live="polite" aria-label="Téléchargement du CV">
       <div className={styles.topRow}>
         <div className={styles.liveBadge}>
           <span className={styles.liveDot} aria-hidden="true" />
-          <span className={styles.liveLabel}>Live</span>
+          <span className={styles.liveLabel}>CV</span>
         </div>
         <button
           type="button"
           className={styles.closeButton}
           onClick={() => setIsVisible(false)}
-          aria-label="Masquer la notification du projet en cours"
+          aria-label="Masquer la notification de téléchargement du CV"
         >
           <HiXMark className={styles.closeIcon} aria-hidden="true" focusable="false" />
         </button>
       </div>
 
       <div className={styles.content}>
-        <HiOutlineCodeBracket className={styles.icon} aria-hidden="true" focusable="false" />
+        <HiArrowDownTray className={styles.icon} aria-hidden="true" focusable="false" />
         <p className={styles.text}>
-          Projet en cours : Développement d'un Flow Free (réflexion algorithmique 'from scratch')
+          Téléchargez mon CV en PDF pour en savoir plus sur mon profil.
         </p>
+      </div>
+
+      <div className={styles.actions}>
+        <Button
+          href="/CV-Sainton-Loic.pdf"
+          variant="secondary"
+          size="s"
+          prefixIcon="download"
+          download
+        >
+          Télécharger le CV
+        </Button>
       </div>
     </aside>
   );
