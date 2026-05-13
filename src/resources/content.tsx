@@ -49,6 +49,9 @@ const home: Home = {
   label: "Home",
   title: `${person.name}`,
   description: `Portfolio présentant mon travail en tant qu'${person.role}`,
+  cvToast: {
+    display: false,
+  },
   headline: (
     <>
       <span className="gradient-headline">

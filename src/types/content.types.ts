@@ -87,6 +87,12 @@ export interface BasePageConfig {
  */
 export interface Home extends BasePageConfig {
 
+  /** CV download toast configuration */
+  cvToast?: {
+    /** Whether to display the CV download toast */
+    display: boolean;
+  };
+
   /** The headline of the home page */
   headline: React.ReactNode;
   /** Featured badge, which appears above the headline */
